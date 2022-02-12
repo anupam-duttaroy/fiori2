@@ -1,0 +1,27 @@
+<mvc:View controllerName="demoproject1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <Label class= "l1" text="Name" labelFor="name"/>
+                        <Input id="name" placeholder="Enter Name" change="onChange" value="{/empList/0/name}"/>
+                        <Label text="E-mail" labelFor="email"/>
+                        <Input id="email" placeholder="Enter Email" change="onChange" type="Email"/>
+                        <Button text="Click Me" press="onPress"/>
+                    </content>
+
+                    <List headerText="Products" items="{/stuList}">
+                        <StandardListItem title="{name}" description="this is test desc" counter="{age}"/>
+                    </List>
+
+                    <List headerText="Employees - Northwind" items="{/Employees}">
+                        <StandardListItem title="{Firstname}" description="{Address}"/>
+                    </List>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

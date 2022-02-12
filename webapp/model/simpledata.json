@@ -1,0 +1,40 @@
+{
+  "empList": [
+    {
+      "name": "Anupam",
+      "comp": "TCS",
+      "role": "Consultant",
+      "tech": "SAP",
+      "exp": 17
+    },
+    {
+      "name": "Arnab",
+      "comp": "Cognizant",
+      "role": "Manager",
+      "tech": "Oracle",
+      "exp": 16
+    },
+    {
+      "name": "Debobrata",
+      "comp": "TCS",
+      "role": "Architect",
+      "tech": "Microsoft",
+      "exp": 15
+    }
+  ],
+  "stuList": [
+    {
+        "name": "Anupam",
+        "age": 40
+    },
+    {
+        "name": "Arnab",
+        "age": 41
+    },
+    {
+        "name": "Debobrata",
+        "age": 39
+    }
+]
+
+}
