@@ -1,39 +1,39 @@
 {
   "empList": [
     {
-      "name": "Anupam",
+      "name": "Abcd",
       "comp": "TCS",
       "role": "Consultant",
       "tech": "SAP",
-      "exp": 17
+      "exp": 8
     },
     {
-      "name": "Arnab",
+      "name": "Efhj",
       "comp": "Cognizant",
       "role": "Manager",
       "tech": "Oracle",
-      "exp": 16
+      "exp": 11
     },
     {
-      "name": "Debobrata",
+      "name": "Ijkl",
       "comp": "TCS",
       "role": "Architect",
       "tech": "Microsoft",
-      "exp": 15
+      "exp": 7
     }
   ],
   "stuList": [
     {
-        "name": "Anupam",
-        "age": 40
+        "name": "Abcd",
+        "age": 28
     },
     {
-        "name": "Arnab",
-        "age": 41
+        "name": "Efgh",
+        "age": 27
     },
     {
-        "name": "Debobrata",
-        "age": 39
+        "name": "Ijkl",
+        "age": 29
     }
 ]
 
