@@ -13,9 +13,26 @@ sap.ui.define([
 
         return Controller.extend("demoproject1.controller.View1", {
             onInit: function () {
-                var model = new ODataModel("https://services.odata.org/v2/northwind/northwind.svc");
-                this.getView().setModel(model);
 
+                // Reading the Orders from Northwind service. The data is available in debug mode
+                this.getOwnerComponent().getModel().read("/Orders", {
+                    success: function(OData, oResp){
+                        console.log("success");
+                        var ordData = OData.results;
+                        // var ordModel = new JSONModel();
+                        var ordModel = new sap.ui.model.json.JSONModel();
+                        ordModel.setData(ordData);
+                        this.getView().setModel(ordModel, "OrdList");
+                    }.bind(this),
+                    error: function(oError){
+                        console.log("Error");
+                    }
+
+                });
+                // var model = new ODataModel("https://services.odata.org/v2/northwind/northwind.svc");
+                // this.getView().setModel(model);
+
+                // Local file from simpledata.json
                 var model1 = new JSONModel(); 
                 model1.loadData("../model/simpledata.json"); 
                 this.getView().setModel(model1);

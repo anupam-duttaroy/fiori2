@@ -6,20 +6,39 @@
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
+                    <!-- The following part is just to test few basic things. These are working -->
                         <Label class= "l1" text="Name" labelFor="name"/>
                         <Input id="name" placeholder="Enter Name" change="onChange" value="{/empList/0/name}"/>
                         <Label text="E-mail" labelFor="email"/>
                         <Input id="email" placeholder="Enter Email" change="onChange" type="Email"/>
                         <Button text="Click Me" press="onPress"/>
-                    </content>
-
-                    <List headerText="Products" items="{/stuList}">
+                    
+                    <!-- This part is to print a list from local JSON file stored in simpledata.json in the model folder -->
+                    <!-- Working as expected -->
+                    <List headerText="Students - Local JSON file" items="{/stuList}">
                         <StandardListItem title="{name}" description="this is test desc" counter="{age}"/>
                     </List>
 
-                    <List headerText="Employees - Northwind" items="{/Employees}">
-                        <StandardListItem title="{Firstname}" description="{Address}"/>
+                    <!-- This part is added reading the Orders separately at the init function in the controller -->
+                    <!-- Not working -->
+                    <List headerText="Orders - Northwind" items="{ordList>/}">
+                    <items>
+                        <!-- Tried with ObjectListItem. Did not work -->
+                        <!-- <ObjectListItem title="{ordList>OrderID}">
+                        <ObjectAttribute text="{ordList>ShipName}" />
+                        </ObjectListItem> -->
+                        <StandardListItem title="{ordList>OrderID}" description="{ordList>ShipName}"/>
+                        </items>
                     </List>
+
+                    <!-- This part should have used the data directly from the default datasource and model -->
+                    <!-- Not working -->
+                        <List headerText="Employees - Northwind" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" noDataText="Drop list items here" id="list0" cd:w5g.dt.context="/Employees" items="{/Employees}">
+                            <items>
+                                <StandardListItem title="{Firstname}" description="{Address}" icon="sap-icon://picture" id="item0"/>
+                            </items>
+                        </List>
+                    </content>
                 </Page>
             </pages>
         </App>
